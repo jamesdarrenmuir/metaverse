@@ -1,0 +1,22 @@
+{
+  "name": "metaverse",
+  "version": "0.0.0",
+  "description": "enter the metaverse",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesdarrenmuir/metaverse.git"
+  },
+  "keywords": [
+    "metaverse"
+  ],
+  "author": "James Darren Muir (james@jamesdarrenmuir.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jamesdarrenmuir/metaverse/issues"
+  },
+  "homepage": "https://github.com/jamesdarrenmuir/metaverse#readme"
+}
