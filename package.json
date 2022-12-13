@@ -4,7 +4,8 @@
   "description": "enter the metaverse",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon backend/app.js",
+    "prod": "node backend/app.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/jamesdarrenmuir/metaverse/issues"
   },
-  "homepage": "https://github.com/jamesdarrenmuir/metaverse#readme"
+  "homepage": "https://github.com/jamesdarrenmuir/metaverse#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
