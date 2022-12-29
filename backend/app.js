@@ -1,11 +1,16 @@
 // main entry point for app
 
-const path = require("node:path")
-const express = require('express')
+const path = require("node:path");
+const express = require('express');
+const http = require('node:http');
+const { Server } = require("socket.io")
 
-
-const app = express()
 const PORT = 3000 | process.env.PORT
+
+const app = express();
+const server = http.createServer(app);
+const io = new Server(server);
+
 
 app.use(express.static(path.join(__dirname, "../frontend")))
 

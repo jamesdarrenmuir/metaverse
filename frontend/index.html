@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <title>metaverse</title>
+
+    <script>
+        function update_room_link() {
+            value = document.getElementById("room_code").value;
+            document.getElementById("join_room_link").href = "room/" + value;
+        }
+    </script>
 </head>
 
 <body>
@@ -22,33 +29,23 @@
     </section>
     <section>
         <div class="container is-max-desktop">
-            <div class="box">
-                <div class="field">
-                    <label for="name" class="label">Username</label>
-                    <div class="control">
-                        <input class="input" type="name" placeholder="e.g. john_smith">
-                    </div>
-                </div>
+            <div class="columns">
+                <fieldset class="column">
+                    <legend><b>Create a New Room</b></legend>
+                    <a href="new"><button class="button is-primary">Create Room</button></a>
+                </fieldset>
 
-                <div class="columns">
-                    <fieldset class="column box">
-                        <legend><b>Join an Existing Room</b></legend>
-                        <div class="field">
-                            <label for="room_code" class="label">Room Code</label>
-                            <div class="control">
-                                <input class="input" type="room_code" placeholder="XXXX-XXXX-XXXX">
-                            </div>
+                <fieldset class="column">
+                    <legend><b>Join an Existing Room</b></legend>
+                    <div class="field">
+                        <label for="room_code" class="label">Room Code</label>
+                        <div class="control">
+                            <input class="input" type="room_code" id="room_code" onChange="update_room_link()"
+                                placeholder="XXXX-XXXX-XXXX">
                         </div>
-
-                        <button class="button is-primary">Join Room</button>
-
-                    </fieldset>
-                    <fieldset class="column box">
-                        <legend><b>Create a New Room</b></legend>
-                        <button class="button is-primary">Create Room</button>
-                    </fieldset>
-                </div>
-
+                    </div>
+                    <a id="join_room_link" href=""><button class="button is-primary">Join Room</button></a>
+                </fieldset>
             </div>
         </div>
     </section>
