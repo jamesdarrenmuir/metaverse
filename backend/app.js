@@ -12,7 +12,7 @@ const server = http.createServer(app);
 const io = new Server(server);
 
 // static files
-app.use(express.static(path.join(__dirname, "../frontend")))
+app.use(express.static(path.join(__dirname, "../frontend/public")))
 
 // create a new room
 app.get('/new', (req, res) => {
@@ -22,10 +22,18 @@ app.get('/new', (req, res) => {
 // join an exisiting room
 app.get(/room\/.+/, (req, res) => {
     //
-    res.send("hello room")
+    res.sendFile(path.join(__dirname, "../frontend/app.html"))
+})
+
+// set up socket.io
+io.on("connection", (socket) => {
+    console.log("a user connected")
+    socket.on('disconnect', () => {
+        console.log('user disconnected');
+    });
 })
 
 // start the app
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     console.log(`Example app listening on port ${PORT}`)
 })
